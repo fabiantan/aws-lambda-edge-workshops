@@ -15,11 +15,11 @@ In this lab, we will use Lambda@Edge to introduce URL rewrites to our web applic
 ### 1. URI rewrite
 
 Let's rewrite the URLs
-https://example.cloudfront.net/img/pinkflower/83699536-beautiful-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=6 .
+https://example.cloudfront.net/img/alien32/83699536-beautiful-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=6 .
 
 to the following URL  
 
-https://example.cloudfront.net/img/pinkflower.jpg
+https://example.cloudfront.net/img/alien32.jpg
 
 internally within Lambda@Edge so that it's not even visible in the viewer web browser.
 
@@ -99,13 +99,13 @@ Wait for ~30-60 seconds for the change to propagate and for the Lambda@Edge func
 
 #### 1.4 URI rewrite now works!
 
-Now any URL with the pinkflower path, will have the last bit removed,  showing exactly the same content.
-
-* https://example.cloudfront.net/img/pinkflower/83688836-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=5
-* https://example.cloudfront.net/img/pinkflower/83699536-beautiful-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=6
-
-<kbd>![x](./img/1-06-pretty-uri.png)</kbd>
-
-Try the following:
+Now any URL with the alien32 path, will have the last bit removed,  showing exactly the same content.
 
 * https://example.cloudfront.net/img/alien32/83688836-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=5
+* https://example.cloudfront.net/img/alien32/83699536-beautiful-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=6
+
+<kbd>![x](./img/1-06-alien32-uri.png)</kbd>
+
+Try the following - a variation of alien:
+
+* https://example.cloudfront.net/img/alien32w/83688836-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=5
