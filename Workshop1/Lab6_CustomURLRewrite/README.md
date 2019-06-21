@@ -6,7 +6,7 @@ In this lab, we will use Lambda@Edge to introduce URL rewrites to our web applic
 ## Steps
 
 [1. URI rewrite](#1-uri-rewrite)  
-[1.0 Configure Cloudfront behaviour(#10-cloudfront-behaviour)
+[1.0 Configure Cloudfront behaviour](#10-cloudfront-behaviour)
 [1.1 Create/modify the Lambda function](#11-createmodify-the-lambda-function)  
 [1.2 Validate the function works in Lambda Console](#12-validate-the-function-works-in-lambda-console)  
 [1.3 Deploy to Lambda@Edge](#13-deploy-to-lambdaedge)  
