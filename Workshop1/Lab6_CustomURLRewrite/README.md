@@ -45,9 +45,9 @@ Go to https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions .
 Create Function.
 
 Author From Scratch
-Function Name: ws-lambda-at-edge-rewrite
-Runtime: nodejs 8.10
-Execution Role: Use an existing role - 	"ws-lambda-at-edge-basic"
+* Function Name: ws-lambda-at-edge-rewrite
+* Runtime: nodejs 8.10
+* Execution Role: Use an existing role - "ws-lambda-at-edge-basic"
 
 Use JavaScript code from [ws-lambda-at-edge-rewrite.js](./ws-lambda-at-edge-rewrite.js) as a blueprint. Take a moment to familiarize yourself with the function code and what it does.
 
