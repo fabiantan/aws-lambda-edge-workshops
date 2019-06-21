@@ -71,6 +71,12 @@ Learn how to serve content customized for the device type of a viewer.
 
 [Go to Lab 5 - Customization](./Lab5_Customization/README.md)
 
+## Lab 6 - URL Rewrite
+
+Learn how to serve rewrite URLs transparently
+
+[Go to Lab 6 - URLRewrite](./Lab6_CustomURLRewrite/README.md)
+
 ## Extra challanges
 
 Here is a few extra challanges for you if you feel up to it.
