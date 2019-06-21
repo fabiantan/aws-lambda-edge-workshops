@@ -25,9 +25,10 @@ internally within Lambda@Edge so that it's not even visible in the viewer web br
 
 #### 1.0 Configure Cloudfront Behaviour
 
-Go to Cloudfront Web Console. https://console.aws.amazon.com/cloudfront/home?region=us-east-1
-Select Cloudfront Distribution
-Select "Behaviors" Tab. Click "Create Behaviour"
+Go to Cloudfront Web Console. https://console.aws.amazon.com/cloudfront/home?region=us-east-1 .
+Select Cloudfront Distribution .
+Select "Behaviors" Tab. 
+Click "Create Behaviour" .
 
 <details><summary>Show/hide the screenshot</summary>
 
