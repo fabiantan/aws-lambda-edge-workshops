@@ -6,6 +6,7 @@ In this lab, we will use Lambda@Edge to introduce URL rewrites to our web applic
 ## Steps
 
 [1. URI rewrite](#1-uri-rewrite)  
+[1.0 Configure Cloudfront behaviour(#10-cloudfront-behaviour)
 [1.1 Create/modify the Lambda function](#11-createmodify-the-lambda-function)  
 [1.2 Validate the function works in Lambda Console](#12-validate-the-function-works-in-lambda-console)  
 [1.3 Deploy to Lambda@Edge](#13-deploy-to-lambdaedge)  
@@ -14,10 +15,27 @@ In this lab, we will use Lambda@Edge to introduce URL rewrites to our web applic
 ### 1. URI rewrite
 
 Let's rewrite the URLs
-https://dxi69eqbxp2wf.cloudfront.net/img/pinkflower/83699536-beautiful-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=6
+https://example.cloudfront.net/img/pinkflower/83699536-beautiful-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=6 .
+
 to the following URL  
-https://dxi69eqbxp2wf.cloudfront.net/img/pinkflower.jpg
+
+https://example.cloudfront.net/img/pinkflower.jpg
+
 internally within Lambda@Edge so that it's not even visible in the viewer web browser.
+
+#### 1.0 Configure Cloudfront Behaviour
+
+Go to Cloudfront Web Console. https://console.aws.amazon.com/cloudfront/home?region=us-east-1
+Select Cloudfront Distribution
+Select "Behaviors" Tab. Click "Create Behaviour"
+
+<details><summary>Show/hide the screenshot</summary>
+
+<kbd>![x](./img/1-00-create-behaviour.png)</kbd>
+</details><br/>
+
+Click `Create`.
+
 
 #### 1.1 Create/modify the Lambda function
 
@@ -73,7 +91,11 @@ Wait for ~30-60 seconds for the change to propagate and for the Lambda@Edge func
 
 Now any URL with the pinkflower path, will have the last bit removed,  showing exactly the same content.
 
-* https://dxi69eqbxp2wf.cloudfront.net/img/pinkflower/83688836-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=5
-* https://dxi69eqbxp2wf.cloudfront.net/img/pinkflower/83699536-beautiful-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=6
+* https://example.cloudfront.net/img/pinkflower/83688836-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=5
+* https://example.cloudfront.net/img/pinkflower/83699536-beautiful-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=6
 
 <kbd>![x](./img/1-06-pretty-uri.png)</kbd>
+
+Try the following:
+
+* https://example.cloudfront.net/img/alien32/83688836-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=5
