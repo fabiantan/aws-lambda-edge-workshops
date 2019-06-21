@@ -44,34 +44,36 @@ Use JavaScript code from [ws-lambda-at-edge-rewrite-test-event.json](./ws-lambda
 
 Click `Test` and validate the function has returned `200` response with a proper HTML for the tree card in the body field.
 
-<details><summary>Show/hide the screenshot</summary>
-  
-<kbd>![x](./img/2-03-test-invoke-success.png)</kbd>
 </details>
 
 #### 1.3 Deploy to Lambda@Edge
 
-Select `Deploy to Lambda@Edge` under `Actions`. Because we are updating a trigger already created in Lab 2, choose `Use existing CloudFront trigger on this function`. Click `Deploy`.
+Select `Deploy to Lambda@Edge` under `Actions`. 
 
-<details><summary>Show/hide the screenshot</summary>
-  
-<kbd>![x](./img/2-04-deploy-to-lambda-edge.png)</kbd>
+Configure CloudFront trigger properties as shown below, acknowledge replication and click `Deploy`.
+
+Field | Value
+--- | ---
+Distribution | Select the distribution created for this workshop
+Cache behavior | `/img/*` (the default cache behavior matching all URI paths)
+CloudFront event | `Origin request`
+
 </details><br/>
 
 The trigger has been successfully updated.
 
 <details><summary>Show/hide the screenshot</summary>
   
-<kbd>![x](./img/2-05-deploy-to-lambda-edge-success.png)</kbd>
+<kbd>![x](./img/1-05-deploy-to-lambda-edge-success.png)</kbd>
 </details><br/>
 
 Wait for ~30-60 seconds for the change to propagate and for the Lambda@Edge function to get globally replicated.
 
 #### 1.4 URI rewrite now works!
 
-Now both URLs show exactly the same content.
+Now any URL with the pinkflower path, will have the last bit removed,  showing exactly the same content.
 
-* https://d123.cloudfront.net/tree
-* https://d123.cloudfront.net/card/da8398f4  
+* https://dxi69eqbxp2wf.cloudfront.net/img/pinkflower/83688836-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=5
+* https://dxi69eqbxp2wf.cloudfront.net/img/pinkflower/83699536-beautiful-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=6
 
-<kbd>![x](./img/2-06-pretty-uri.png)</kbd>
+<kbd>![x](./img/1-06-pretty-uri.png)</kbd>
