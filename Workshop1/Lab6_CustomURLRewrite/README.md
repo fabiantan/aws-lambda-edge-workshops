@@ -5,53 +5,42 @@ In this lab, we will use Lambda@Edge to introduce URL rewrites to our web applic
 
 ## Steps
 
-[1. URI rewrite](#2-uri-rewrite)  
-[1.1 Create/modify the Lambda function](#21-createmodify-the-lambda-function)  
-[1.2 Validate the function works in Lambda Console](#22-validate-the-function-works-in-lambda-console)  
-[1.3 Deploy to Lambda@Edge](#23-deploy-to-lambdaedge)  
-[1.4 URI rewrite now works!](#24-uri-rewrite-now-works)  
+[1. URI rewrite](#1-uri-rewrite)  
+[1.1 Create/modify the Lambda function](#11-createmodify-the-lambda-function)  
+[1.2 Validate the function works in Lambda Console](#12-validate-the-function-works-in-lambda-console)  
+[1.3 Deploy to Lambda@Edge](#13-deploy-to-lambdaedge)  
+[1.4 URI rewrite now works!](#14-uri-rewrite-now-works)  
 
 ### 1. URI rewrite
 
 Let's rewrite the URLs
-https://us.123rf.com/450wm/lenanet/lenanet1708/lenanet170800008/83699536-beautiful-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=6
-to he actual card URL  
-https://us.123rf.com/450wm/lenanet/lenanet1708/lenanet170800008.jpg
+https://dxi69eqbxp2wf.cloudfront.net/img/pinkflower/83699536-beautiful-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=6
+to the following URL  
+https://dxi69eqbxp2wf.cloudfront.net/img/pinkflower.jpg
 internally within Lambda@Edge so that it's not even visible in the viewer web browser.
 
 #### 1.1 Create/modify the Lambda function
 
-
-Paste also the following snippet to the beginning of the handler as shown on the screenshot below. This is the actual URI rewrite that changes URI according to the map above. See the screenshot below with the updated function code.
-
-```
-if (request.uri in redirects) {
-    request.uri = redirects[request.uri];
-}
-```
+Use JavaScript code from [ws-lambda-at-edge-rewrite.js](./ws-lambda-at-edge-rewrite.js) as a blueprint. Take a moment to familiarize yourself with the function code and what it does.
 
 <details><summary>Show/hide the screenshot</summary>
   
-<kbd>![x](./img/2-01-modify-card-generation.png)</kbd>
+<kbd>![x](./img/1-01-rewrite-url.png)</kbd>
 </details><br/>
 
 Click `Save`.
 
 #### 1.2 Validate the function works in Lambda Console
 
-Update the test event - click `Configure test events` inside the dropdown list of test events next to the `Test` button.
+click `Configure test events` inside the dropdown list of test events next to the `Test` button.
+
+Use JavaScript code from [ws-lambda-at-edge-rewrite-test-event.json](./ws-lambda-at-edge-rewrite-test-event.json) as the event.
 
 <details><summary>Show/hide the screenshot</summary>
   
-<kbd>![x](./img/2-02-test-event-1.png)</kbd>
+<kbd>![x](./img/1-02-test-event-1.png)</kbd>
 </details><br/>
 
-Change the `uri` field value to `"/tree"`. Click `Save`.
-
-<details><summary>Show/hide the screenshot</summary>
-  
-<kbd>![x](./img/2-02-test-event-2.png)</kbd>
-</details><br/>
 
 Click `Test` and validate the function has returned `200` response with a proper HTML for the tree card in the body field.
 
