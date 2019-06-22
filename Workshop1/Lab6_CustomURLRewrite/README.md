@@ -66,7 +66,7 @@ Click `Save`.
 
 click `Configure test events` inside the dropdown list of test events next to the `Test` button.
 
-Use JavaScript code from [ws-lambda-at-edge-rewrite-test-event.json](./ws-lambda-at-edge-rewrite-test-event.json) as the event.
+Use JavaScript code from [ws-lambda-at-edge-rewrite-test-event.json](./ws-lambda-at-edge-rewrite-test-event.json) as the event. Create a test event named "rewriteURLRegex"
 
 <details><summary>Show/hide the screenshot</summary>
   
@@ -75,6 +75,9 @@ Use JavaScript code from [ws-lambda-at-edge-rewrite-test-event.json](./ws-lambda
 
 
 Click `Test` and validate the function has returned `200` response with a proper HTML for the tree card in the body field.
+
+The test input is: "/img/alien32/83699536-beautiful-close-up-shot-of-lavender-flowers-at-the-field.jpg?ver=6"
+The expected output is a URLRewrite: "/img/alien32.png"
 
 </details>
 
